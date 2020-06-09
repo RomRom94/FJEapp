@@ -1,0 +1,16 @@
+<div class="user-container" *ngIf="userData">
+  <p>Connecté en tant que: {{ userData.firstname }} {{ userData.lastname }}</p>
+</div>
+
+<app-form-search (source)="handleSource($event)"></app-form-search>
+
+<app-bookmarks (source)="handleSource($event)"></app-bookmarks>
+
+<div class="source-container" *ngIf="currentSource">
+  <h2>{{ currentSource.name }}</h2>
+  <p>{{ currentSource.description }}</p>
+</div>
+
+<section class="news-container" *ngIf="newsList !== null">
+  <app-article *ngFor="let item of newsList" [new]="item"></app-article>
+</section>

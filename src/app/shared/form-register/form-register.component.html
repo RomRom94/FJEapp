@@ -1,0 +1,12 @@
+<div class="register-container">
+  <h2>S'inscrire chez FJE App</h2>
+  <p>Suivez vos actualités préférées en vous inscrivant chez FJE App</p>
+  <form [formGroup]="formData" (submit)="formSubmit.emit(formData.value)">
+    <input formControlName="firstname" type="text" name="firstname" required placeholder="Prénom">
+    <input formControlName="lastname" type="text" name="lastname" required placeholder="Nom">
+    <input formControlName="email" type="email" name="email" required placeholder="Adresse email">
+    <input formControlName="password" type="password" name="password" required placeholder="Mot de passe">
+    <input formControlName="confirm_password" type="password" name="confirm_password" required placeholder="Confirmez le mot de passe">
+    <button [disabled]="!formData.valid" type="submit">S'ENREGISTER</button>
+  </form>
+</div>

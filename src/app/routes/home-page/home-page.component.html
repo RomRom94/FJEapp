@@ -1,0 +1,16 @@
+<div class="forms-container">
+  <app-form-login *ngIf="!userConnected"(formSubmit)="login($event)"></app-form-login>
+  <app-form-register *ngIf="!userConnected" (formSubmit)="register($event)"></app-form-register>
+</div>
+
+<app-form-search (source)="handleSource($event)"></app-form-search>
+
+<div class="source-container" *ngIf="currentSource">
+  <h2>{{ currentSource.name }}</h2>
+  <p>{{ currentSource.description }}</p>
+</div>
+
+<section class="news-container" *ngIf="newsList !== null">
+  <app-article *ngFor="let item of newsList" [new]="item"></app-article>
+</section>
+

@@ -1,0 +1,12 @@
+<div class="news">
+  <a href="{{ new.url }}" target="_blank" class="news">
+    <div class="news-container">
+      <figure [ngStyle]="{'background': 'url(' + new.urlToImage + ')', 'background-position': 'center', 'background-size': 'cover', 'background-repeat': 'no-repeat'}"></figure>
+      <div class="news-container__text">
+        <p>{{ new.publishedAt | date : "dd.MM.y" }}</p>
+        <h2>{{ new.title }}</h2>
+        <a href="{{ new.url }}" target="_blank">Lire +</a>
+      </div>
+    </div>
+  </a>
+</div>

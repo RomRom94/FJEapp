@@ -1,0 +1,9 @@
+<div class="login-container">
+  <h2>Se connecter</h2>
+  <p>Se connecter à son compte</p>
+  <form [formGroup]="formData" (submit)="formSubmit.emit(formData.value)">
+    <input formControlName="email" type="email" name="email" required placeholder="Adresse email">
+    <input formControlName="password" type="password" name="password" required placeholder="Mot de passe">
+    <button [disabled]="!formData.valid" type="submit">SE CONNECTER</button>
+  </form>
+</div>

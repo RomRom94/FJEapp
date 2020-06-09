@@ -1,0 +1,20 @@
+<div class="search-container">
+  <h2>Suivez vos actualités</h2>
+  <p>Naviguez parmis un choix de source</p>
+  <form [formGroup]="formData" (submit)="getNews(formData)">
+    <select formControlName="source" name="source" id="source" (change)="onChangeSource($event)" [(ngModel)]="currentSourceId">
+      <option *ngFor="let source of sourcesList" [value]="source.id">{{ source.name }}</option>
+    </select>
+    <input formControlName="keyword" type="text" name="keyword" placeholder="MOT-CLÉ">
+    <div class="buttons-container">
+      <button type="submit">RECHERCHER</button>
+      <button type="button" (click)="resetForm()" class="reinitialised">REINITIALISER</button>
+    </div>
+    <div class="buttons-container bookmark">
+      <button *ngIf="currentSourceId && !isBookmarked" class="save" type="button" (click)="addBookmark()">ENREGISTRER</button>
+      <button *ngIf="isBookmarked" type="button" class="delete" (click)="deleteBookmark()">SUPPRIMER</button>
+    </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,39 @@
+header {
+  padding: 20px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  position: relative;
+  font-weight: 700;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(10px, -50%);
+    width: 30px;
+    height: 30px;
+    background: url('../../../assets/images/radio.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+header .deconnection {
+  margin: 0 auto;
+  padding: 0 10px;
+  color: #fff;
+  height: 44px;
+  background-color: #eb4d4b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

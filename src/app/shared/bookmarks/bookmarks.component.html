@@ -1,0 +1,7 @@
+<div class="bookmarks-container">
+  <ul>
+    <li *ngFor="let bookmark of bookmarksList">
+      <button (click)="getNews(bookmark.id)">{{ bookmark.name }}</button>
+    </li>
+  </ul>
+</div>
